@@ -1,0 +1,46 @@
+<h1 mat-dialog-title>
+    Add Patients Details
+</h1>
+<div mat-dialog-content>
+<form class="example-form" [formGroup]="patientForm">
+   
+    <table class="example-full-width" cellspacing="0"><div><tr>
+      <td><mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>First name</mat-label>
+        <input formControlName="FirstName" matInput>
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Last name</mat-label>
+        <input formControlName="LastName" matInput>
+      </mat-form-field></td>
+    </tr></div></table>
+  
+    <table class="example-full-width" cellspacing="0"><tr>
+      <tr>
+      <td><mat-form-field appearance="fill">
+        <mat-label>Enter your email</mat-label>
+        <input formControlName="Email" matInput placeholder="pat@example.com">
+       
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Contact Number</mat-label>
+        <input formControlName="ContactNumber" matInput #contactNumber maxlength="10" placeholder="Ex. 9999999999" >
+        <mat-hint align="end"></mat-hint>
+      </mat-form-field></td></tr>
+      <td><mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Allergy</mat-label>
+        <input formControlName="Allergy" matInput>
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Food Category</mat-label>
+        <input formControlName="FoodCategory" matInput>
+      </mat-form-field></td>
+    
+
+
+</table>
+<button  mat-raised-button color="primary" (click)="addPatient()"> Submit</button>
+
+<button style="margin-left:10px;" mat-raised-button color="warn" mat-dialog-close>Close</button>  </form>
+</div>
+  
