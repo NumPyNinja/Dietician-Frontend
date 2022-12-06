@@ -1,19 +1,25 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
+const HttpUploadOptions = {
+  headers: new HttpHeaders({ "Content-Type": "multipart/form-data" })
+}
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class UserService {
 
   constructor(private http : HttpClient) { }
-  postPatient(data : any)
+  postPatient(formData : FormData):Observable<any>
   {
-    return this.http.post<any>("http://localhost:3000/patientList/",data)
-    //return this.http.post<any>("http://localhost:5678/dietician/user",data);
+    
+        
+     return this.http.post<any>("http://localhost:5678/dietician/patient",formData);
+   
   }
   getPatient()
   {
-    return this.http.get<any>("http://localhost:3000/patientList/");
+    return this.http.get<any>("http://localhost:5678/dietician/patient/");
   }
 }
