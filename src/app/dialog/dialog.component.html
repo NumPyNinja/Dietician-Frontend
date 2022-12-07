@@ -18,7 +18,7 @@
     <table class="example-full-width" cellspacing="0"><tr>
       <tr>
       <td><mat-form-field appearance="fill">
-        <mat-label>Enter your email</mat-label>
+        <mat-label>Email</mat-label>
         <input formControlName="Email" matInput placeholder="pat@example.com">
        
       </mat-form-field></td>
@@ -27,6 +27,7 @@
         <input formControlName="ContactNumber" matInput #contactNumber maxlength="10" placeholder="Ex. 9999999999" >
         <mat-hint align="end"></mat-hint>
       </mat-form-field></td></tr>
+      <tr>
       <td><mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Allergy</mat-label>
         <input formControlName="Allergy" matInput>
@@ -36,10 +37,10 @@
         <input formControlName="FoodCategory" matInput>
       </mat-form-field></td></tr>
       
-      <tr><td>
+     <tr> <td>
     <mat-label for="file">Upload File: </mat-label>
-    <input type="file" (change)="saveFile($event)"> </td></tr>
-    
+    <input type="file" (change)="saveFile($event)"> </td>
+    </tr>
 
 
 </table>
