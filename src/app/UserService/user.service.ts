@@ -20,6 +20,6 @@ export class UserService {
   }
   getPatient()
   {
-    return this.http.get<any>("http://localhost:5678/dietician/patient/");
+    return this.http.get<any>("http://localhost:5678/dietician/patient");
   }
 }
