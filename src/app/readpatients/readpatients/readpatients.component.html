@@ -1,1 +1,38 @@
-<p>readpatients works!</p>
+ 
+<div class="center">
+    <h1>My Patients </h1>
+</div>
+<mat-toolbar color = "warn">
+    <form class="patient-search-form" [formGroup]="patientSearchForm" >
+    <div>
+        <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>  
+                 
+            <input pInputText formControlName="Name" type="text" id="filterGlobal" 
+                placeholder="Name Filter" /> <!--(input)="dt.filterGlobal($event.target.value, 'contains')"-->
+        </span>
+   
+        <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input pInputText formControlName="Email" type="text" id="filterGlobal"  
+                placeholder="Email Address Filter" /> <!--(input)="dt.filterGlobal($event.target.value, 'contains')"-->
+            <mat-error *ngIf="patientSearchForm.controls['Email'].hasError('email')">
+                >Please enter a valid email address  
+            </mat-error>
+        </span>
+   
+        <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input pInputText formControlName="PhoneNo" type="text" id="filterGlobal"  
+                placeholder="Phone Number Filter" /> <!--(input)="dt.filterGlobal($event.target.value, 'contains')"-->
+            <mat-error *ngIf="patientSearchForm.controls['PhoneNo'].hasError('pattern')">
+                Please enter a valid Phone no
+            </mat-error>
+        </span>
+   
+        <button  mat-raised-button color="primary" (click)="onSearchSubmit(patientSearchForm)" > Search</button> 
+       
+    </div>
+</form>
+</mat-toolbar>
+    
