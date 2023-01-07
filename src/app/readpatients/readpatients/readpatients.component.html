@@ -35,4 +35,86 @@
     </div>
 </form>
 </mat-toolbar>
+
+<!-- 
+<mat-card> 
+    <mat-card-content> 
+    <div fxLayout="row" fxLayoutAlign="space-around center" style="height:100%">
+    <mat-spinner [diameter]="50" strokeWidth="5" *ngIf="visibility ">
+    </mat-spinner>
+</div>
+
+  
+<p-table #dt responsiveLayout="stack" [value]="programs" [rows]="5" [paginator]="true"
+    [globalFilterFields]="['programName','programDescription','programStatus']"
+    [(selection)]="selectedPrograms" [rowHover]="true" dataKey="programId"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [showCurrentPageReport]="true">
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width: 3rem">
+                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
+            <th pSortableColumn="programName">Program Name <p-sortIcon field="programName"></p-sortIcon>
+            </th>
+            <th pSortableColumn="programDescription">Program Description <p-sortIcon field="description">
+                </p-sortIcon>
+            </th>
+            <th pSortableColumn="programStatus">Program Status <p-sortIcon field="status"></p-sortIcon>
+            </th>
+            <th> Edit Delete
+            </th>
+
+
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-program>
+        <tr>
+            <td>
+                <p-tableCheckbox [value]="program"></p-tableCheckbox>
+            </td>
+            <td>{{program.programName}}</td>
+            <td>{{program.programDescription}}</td>
+            <td>{{program.programStatus}}</td>
+            <td>
+                <div class="action">
+                    <span>
+                        <button pButton pRipple icon="pi pi-pencil"
+                            class="p-button-rounded p-button-success" id="editProgram"
+                            (click)="editProgram(program)"></button>
+                    </span>
+                    <span>
+                        <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger" id="deleteProgram"
+                            (click)="deleteProgram(program)"></button>
+                    </span>
+                </div>
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+        <div class="p-d-flex p-ai-center p-jc-between">
+            In total there are {{programs ? programs.length : 0 }} programs.
+        </div>
+    </ng-template>
+</p-table>
+
+ 
+</mat-card-content>
+</mat-card>
+-->
+<div *ngIf="isLoaded">
+    <table border=1>
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+    </thead>
+    <tr *ngFor="let patient of patients">  <!-- patient in patients-->
+        <td> {{patient.FirstName}} </td>
+        <td> {{patient.LastName}} </td>
+    </tr>
+    </table>
+</div>
     
